@@ -1,11 +1,10 @@
-<h1>Top page</h1>
-<%# <%= @post.content %> 
-<%# <%= @post.created_at %> 
-<%# .find()で単数レコードの取得ならインスタンス変数は単数形
-.allは複数レコードの取得なので変数も複数形 %>
-<%# <%= @posts.content %>
-<%# <%= @posts.created_at %>
-<%= link_to "新規投稿", "/posts/new" %>
+<h1>FirstAPP</h1>
+<%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
+  <%= form.text_field :content %>
+  <%= form.submit '投稿する' , id: "submit" %>
+<% end %>
+
+
 <% @posts.each do |post| %>
 <div class="post">
  <div class="post-date">
